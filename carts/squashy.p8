@@ -28,9 +28,29 @@ function moveball()
   bally += ballydir
 end
 
+function bounceball()
+  -- left
+  if ballx < ballsize then
+    ballxdir =- ballxdir
+    sfx(0)
+  end
+  -- right
+  if ballx > 128 - ballsize then
+    ballxdir =- ballxdir
+    sfx(0)
+  end
+  --top
+  if bally < ballsize then
+    ballydir =- ballydir
+    sfx(0)
+  end
+end
+
+
 function _update()
   movepaddle()
   moveball()
+  bounceball()
 end
 
 function _draw()
