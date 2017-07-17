@@ -5,3 +5,4 @@ cstore/*
 log.txt
 sdl_controllers.txt
 carts/demos/*
+config.txt
