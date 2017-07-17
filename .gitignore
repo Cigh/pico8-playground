@@ -6,3 +6,4 @@ log.txt
 sdl_controllers.txt
 carts/demos/*
 config.txt
+/config.txt
