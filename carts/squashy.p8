@@ -15,7 +15,7 @@ ballsize = 3
 ballxdir = 5
 ballydir = -3
 
-function movepaddle() 
+function movePaddle() 
   if btn(0) then
     padx -= 3
   elseif btn(1) then
@@ -23,12 +23,19 @@ function movepaddle()
   end
 end
 
-function moveball()
+function moveBall()
   ballx += ballxdir
   bally += ballydir
 end
 
-function bounceball()
+function loseDeadBall()
+  if bally > 128 then
+    sfx(3)
+    bally = 24
+  end
+end
+
+function bounceBall()
   -- left
   if ballx < ballsize then
     ballxdir =- ballxdir
@@ -46,11 +53,21 @@ function bounceball()
   end
 end
 
+function bouncePaddle()
+  if ballx >= padx and
+    ballx <= padx * padw and
+    bally > pady then
+    sfx(0)
+    ballydir =- ballydir
+  end
+end
+
 
 function _update()
-  movepaddle()
-  moveball()
-  bounceball()
+  movePaddle()
+  bounceBall()
+  bouncePaddle()
+  moveBall()
 end
 
 function _draw()
