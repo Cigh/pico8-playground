@@ -25,8 +25,10 @@ function get(bi, x, y)
   return boards[bi][y][x]
 end
 
--- draw a blinker
+-- draw an r pentomino
 boards[1][60][64] = 1
+boards[1][60][65] = 1
+boards[1][61][63] = 1
 boards[1][61][64] = 1
 boards[1][62][64] = 1
 
