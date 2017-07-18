@@ -18,6 +18,13 @@ for y = 1, height do
   end
 end
 
+function get(bi, x, y)
+  if((x < 1) or (x > width) or (y < 1) or (y > height)) then
+    return 0
+  end
+  return boards[bi][y][x]
+end
+
 -- draw a blinker
 boards[1][60][64] = 1
 boards[1][61][64] = 1
