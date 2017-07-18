@@ -39,4 +39,24 @@ while true do
     end
   end
   flip()
+  otherI = (boardI % 2) + 1
+  for y = 1, height do
+    for x = 1, width do
+      neighbors = (
+        get(boardI, x -1, y - 1) +
+        get(boardI, x, y - 1) +
+        get(boardI, x + 1, y - 1) +
+        get(boardI, x - 1, y) +
+        get(boardI, x + 1, y) +
+        get(boardI, x - 1, y + 1) +
+        get(boardI, x, y + 1) +
+        get(boardI, x + 1, y + 1))
+      if((neighbors == 3) or ((boards[boardI][y][x] == 1) and neighbors == 2)) then
+        boards[otherI][y][x] = 1
+      else
+        boards[otherI][y][x] = 0
+      end
+    end
+  end
+  boardI = otherI
 end
