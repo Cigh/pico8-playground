@@ -53,3 +53,24 @@ function getNeighbours(pos)
 
   return neighbours
 end
+
+-- find the first location of a specific tile type
+function getSpecialTile(tileID)
+  for x = 0, 15 do
+    for y = 0, 15 do
+      local tile = mget(x, y)
+      if tile == tileID then
+        return {x, y}
+      end
+    end
+  end
+  printh('Did not find tile: ' ..tileID)
+end
+
+-- insert into a start of table
+function insert(t, val)
+  for i = (#t + 1), 3, -1 do
+    t[i] = t[i - 1]
+  end
+  t[1] = val
+end
