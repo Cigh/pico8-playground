@@ -91,3 +91,18 @@ function reverse(t)
   end
 end
 
+-- translate a 2D x, y coordinate to a 10 index and back again
+function vectorIndex(vec)
+  return mapToIndex(vec[1], vec[2])
+end
+
+function mapToIndex(x, y)
+  return ((x + 1) * 16) + y
+end
+
+function indexToMap(index)
+  local x = (index - 1) / 16
+  local y = index - (x * w)
+
+  return {x, y}
+end
