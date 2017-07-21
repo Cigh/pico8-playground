@@ -74,3 +74,10 @@ function insert(t, val)
   end
   t[1] = val
 end
+
+-- pop the last element off a table
+function popend(t)
+  local top = t[#t]
+  del(t, t[#t])
+  return top
+end
