@@ -81,3 +81,13 @@ function popend(t)
   del(t, t[#t])
   return top
 end
+
+function reverse(t)
+  for i = 1, (#t / 2) do
+    local temp = t[i]
+    local oppIndex = #t - (i - 1)
+    t[i] = t[oppIndex]
+    t[oppIndex] = temp
+  end
+end
+
