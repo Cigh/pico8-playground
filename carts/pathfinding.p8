@@ -29,3 +29,27 @@ function _draw()
   mapdraw(0, 0, 0, 0, 16, 16)
 end
 
+-- find all existing neighbours of a position that are not walls
+function getNeighbours(pos)
+  local neighbours = {}
+  local x = pos[1]
+  local y = pos[2]
+
+  if x > 0 and (mget(x - 1, y) != wallID) then
+    add(neighbours, {x - 1, y})
+  end
+
+  if x < 15 and (mget(x + 1, y) != wallID) then
+    add(neighbours, {x + 1, y})
+  end
+
+  if x > 0 and (mget(x, y - 1) != wallID) then
+    add(neighbours, {x, y - 1})
+  end
+
+  if x < 15 and (mget(x, y + 1) != wallID) then
+    add(neighbours, {x, y + 1})
+  end
+
+  return neighbours
+end
