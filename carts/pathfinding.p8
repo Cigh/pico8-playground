@@ -3,8 +3,8 @@ version 8
 __lua__
 
 function _init()
-  start = getspecialtile(17)
-  goal = getspecialtile(16)
+  start = getSpecialTile(17)
+  goal = getSpecialTile(16)
 
   frontier = {}
   insert(frontier, start)
