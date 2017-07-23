@@ -3,7 +3,7 @@ version 8
 __lua__
 
 function _init()
-  hunger = 100
+  hunger = 10
 end
 
 function _update()
@@ -14,15 +14,44 @@ end
 function _draw()
   -- clear the screen
   rectfill(0, 0, 128, 128, 1)
+
+  -- draw the floor
+  rectfill(0,110, 128, 128, 13)
+
+  -- draw our foxy
+    spr(059, 40, 110)
+    spr(060, 48, 110)
+    spr(061, 54, 110)
+    spr(062, 62, 110)
+    spr(063, 70, 110)
+
+    spr(043, 40, 102)
+    spr(044, 48, 102)
+    spr(045, 54, 102)
+    spr(046, 62, 102)
+    spr(047, 70, 102)
+
+    spr(027, 40, 94)
+    spr(028, 48, 94)
+    spr(029, 54, 94)
+    spr(030, 62, 94)
+    spr(031, 70, 94)
+
+    spr(011, 40, 86)
+    spr(012, 48, 86)
+    spr(013, 54, 86)
+    spr(014, 62, 86)
+    spr(015, 70, 86)
+
   -- draw the hunger value (placeholder)
   print(hunger, 12, 6, 2)
 
   if (hunger < 3) then
-    spr(056, 66, 80)
-    spr(041, 72, 72)
-    spr(042, 80, 72)
-    spr(057, 72, 80)
-    spr(058, 80, 80)
+    spr(056, 61, 86)
+    spr(041, 67, 78)
+    spr(042, 75, 78)
+    spr(057, 67, 86)
+    spr(058, 75, 86)
   end
 end
 
