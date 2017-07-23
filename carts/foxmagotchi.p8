@@ -57,7 +57,7 @@ function _draw()
     spr(033, 108, 3) -- bath
 
   -- draw active hud item indicator
-    spr(019, hud_x, hud_y)
+    line(hud_x, hud_y, hud_x + 8, hud_y)
 
   -- draw our foxy
     spr(059, 40, 110)
