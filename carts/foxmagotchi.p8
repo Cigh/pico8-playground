@@ -3,11 +3,15 @@ version 8
 __lua__
 
 function _init()
+  timer = 100
   hunger = 10
 end
 
 function _update()
-  makehungry()
+  setTimer()
+  if (timer == 0) then
+    makeHungry()
+  end
 
 end
 
@@ -45,6 +49,7 @@ function _draw()
 
   -- draw the hunger value (placeholder)
   print(hunger, 12, 6, 2)
+  print(timer, 28, 6, 2)
 
   if (hunger < 3) then
     spr(056, 61, 86)
@@ -55,12 +60,19 @@ function _draw()
   end
 end
 
-function makehungry()
-	if (hunger > 0) then
-  hunger -= 1
-	end
+function makeHungry()
+  if (hunger > 0) then
+    hunger -= 1
+  end
 end
 
+function setTimer()
+  if (timer > 0) then
+    timer -= 1
+  else
+    timer = 100
+  end
+end
 
 __gfx__
 00000000666666666666666600000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111100000000
