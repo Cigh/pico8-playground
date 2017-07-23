@@ -3,11 +3,18 @@ version 8
 __lua__
 
 function _init()
-  timer = 100
-  hunger = 10
+  timer = 10
+  hunger = 50
 end
 
 function _update()
+  if btnp(4) then
+    hunger += 10
+    if (hunger > 50) then
+      hunger = 50
+    end
+  end
+
   setTimer()
   if (timer == 0) then
     makeHungry()
@@ -70,7 +77,7 @@ function setTimer()
   if (timer > 0) then
     timer -= 1
   else
-    timer = 100
+    timer = 10
   end
 end
 
