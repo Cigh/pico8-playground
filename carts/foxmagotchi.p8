@@ -3,21 +3,27 @@ version 8
 __lua__
 
 function _init()
-  hunger = 10
+  hunger = 100
 end
 
 function _update()
   makehungry()
-  if (hunger < 3) then
-    spr(004, 115, 12)
-  end
+
 end
 
 function _draw()
   -- clear the screen
-  rectfill(0, 0, 128, 128, 13)
+  rectfill(0, 0, 128, 128, 1)
   -- draw the hunger value (placeholder)
   print(hunger, 12, 6, 2)
+
+  if (hunger < 3) then
+    spr(056, 66, 80)
+    spr(041, 72, 72)
+    spr(042, 80, 72)
+    spr(057, 72, 80)
+    spr(058, 80, 80)
+  end
 end
 
 function makehungry()
