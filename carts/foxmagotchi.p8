@@ -4,8 +4,9 @@ __lua__
 
 function _init()
   timer = 20
-  hunger = 10
+  hunger = 0
   breathe = true
+  show_info = false
 
   hud_x = 3
   hud_y = 12
@@ -22,11 +23,12 @@ function _update()
   end
   if btnp(4) then
     sfx(0)
-    spr(045, 67, 78)
-    hunger += 5
-    if (hunger > 20) then
-      hunger = 20
-    end
+    show_info = (not show_info)
+    --hunger += 5
+
+    -- if (hunger > 20) then
+    --   hunger = 20
+    -- end
   end
 
   settimer()
@@ -45,19 +47,21 @@ function _draw()
 
   -- draw the hud bar
   rectfill(0, 0, 128, 13, 6)
-
+  -- draw active hud item indicator
+    line(hud_x, hud_y, hud_x + 8, hud_y, 2)
   -- draw the status panel
-  rectfill(95, 10, 128, 30, 6) -- panel
-  print("hunger", 100, 16, 1)
-  print(hunger, 100, 24, 2)
+  if (show_info) then
+    rectfill(95, 14, 128, 30, 6) -- panel
+    print("hunger", 100, 16, 1)
+    print(hunger, 100, 24, 2)
+  end
 
 
   -- draw the hud items
     spr(032, 3, 3) -- food
     spr(033, 108, 3) -- bath
 
-  -- draw active hud item indicator
-    line(hud_x, hud_y, hud_x + 8, hud_y)
+
 
   -- draw our foxy
     spr(059, 40, 110)
@@ -95,7 +99,7 @@ function _draw()
       spr(046, 62, 102)
     end
 
-  if (hunger < 9) then
+  if (hunger > 9) then
     spr(056, 61, 86)
     spr(041, 67, 78)
     spr(042, 75, 78)
@@ -105,8 +109,8 @@ function _draw()
 end
 
 function makehungry()
-  if (hunger > 0) then
-    hunger -= 1
+  if (hunger < 20) then
+    hunger += 1
   end
 end
 
