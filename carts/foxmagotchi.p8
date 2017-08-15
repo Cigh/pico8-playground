@@ -67,9 +67,15 @@ function _draw()
     line(hud_x, hud_y, hud_x + 9, hud_y, 2)
   -- draw the status panel
   if (show_info) then
-    rectfill(95, 14, 128, 30, 6) -- panel
-    print("hunger", 100, 16, 1)
-    print(hunger, 100, 24, 2)
+    rectfill(95, 14, 128, 100, 6) -- panel
+    print("hunger", 95, 15, 1)
+    print(hunger, 95, 25, 2)
+    print("boredom", 95, 35, 1)
+    print(boredom, 95, 45, 2)
+    print("fatigue", 95, 55, 1)
+    print(fatigue, 95, 65, 2)
+    print("hygiene", 95, 75, 1)
+    print(hygiene, 95, 85, 2)
   end
 
   -- draw the hud items
