@@ -143,6 +143,14 @@ function makebored()
     boredom += 1
   end
 end
+
+function maketired()
+  if (fatigue < 40 and time) then
+    fatigue += 1
+  elseif (fatigue > 0 and not time) then
+    fatigue -= 1
+  end
+end
 function settimer()
   if (timer > 0) then
     timer -= 1
