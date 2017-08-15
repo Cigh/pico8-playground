@@ -6,6 +6,9 @@ function _init()
   time = true
   timer = 20
   hunger = 0
+  boredom = 0
+  fatigue = 0
+  hygiene = 0
   breathe = true
   show_info = false
   activemenuitem = 0
