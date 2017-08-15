@@ -138,6 +138,11 @@ function makehungry()
   end
 end
 
+function makebored()
+  if (boredom < 50) then
+    boredom += 1
+  end
+end
 function settimer()
   if (timer > 0) then
     timer -= 1
