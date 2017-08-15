@@ -179,6 +179,10 @@ function play ()
   boredom = 0
 end
 
+function bath ()
+  hygiene = 0
+end
+
 function togglesleep ()
   time = (not time)
 end
