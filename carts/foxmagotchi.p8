@@ -151,6 +151,14 @@ function maketired()
     fatigue -= 1
   end
 end
+
+function makedirty()
+  if (hygiene < 50) then
+    hygiene += 1
+  end
+end
+
+
 function settimer()
   if (timer > 0) then
     timer -= 1
