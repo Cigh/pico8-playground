@@ -174,6 +174,9 @@ function feed ()
   if (hunger < 0) then
     hunger = 0
   end
+
+function play ()
+  boredom = 0
 end
 
 function togglesleep ()
